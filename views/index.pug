@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to the #[em Clubhouse]
+  p #[strong Messages:]
+  dl
+    each message in messages
+      dt=message.title 
+      dd=message.content
+      if current_user && current_user.member === true 
+        dd #{message.user.name}, #{message.timestamp}
+      if current_user && current_user.admin === true
+        dd  
+          a(href=message.url+'/delete') Delete message
+      dd &nbsp
+  if current_user
+    p 
+      a(href='/clubhouse/message/new') Create a new message
+  

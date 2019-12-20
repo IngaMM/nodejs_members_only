@@ -1,0 +1,30 @@
+extends layout
+
+block content
+
+  h1 #{user.username}
+  
+  p #[strong Name:] #{user.name}
+  
+  div(style='margin-left:20px;margin-top:20px')
+
+    p #[strong Messages:]
+    
+    dl
+      each message in user_messages
+        dt 
+          a(href=message.url) #{message.title}
+        dd #{message.timestamp}
+        dd &nbsp
+      else
+        p This user has no messages.
+        
+  if !user.member 
+    p #[strong This user is not a club member.]
+    a(href=user.url+'/join_club') Join the club
+  else 
+    p #[strong This user is a club member.]
+    
+  if info
+    p=info
+    

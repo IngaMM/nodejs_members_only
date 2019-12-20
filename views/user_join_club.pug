@@ -1,0 +1,12 @@
+extends layout
+
+block content
+
+  h1 #{title}: #{user.username}
+  
+  form(method='POST' action='')
+    div.form-group
+      label(for='password') Passcode:
+      input#passcode.form-control(type='password', name='passcode')
+    button.btn.btn-primary(type='submit') Submit
+  

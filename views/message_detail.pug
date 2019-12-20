@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+  h1 #{message.title}
+  
+  p #[strong User:] 
+    a(href=message.user.url) #{message.user.name}
+  p #[strong Created at:] #{message.timestamp}
+  
+  div(style='margin-left:20px;margin-top:20px')
+
+    p #[strong Content]
+    p=message.content
+    
+    
