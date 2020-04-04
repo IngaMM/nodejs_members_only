@@ -25,6 +25,7 @@ var indexRouter = require("./routes/index");
 var clubhouseRouter = require("./routes/clubhouse");
 
 const app = express();
+app.locals.moment = require("moment"); //Make moment available in pug templates
 app.use(helmet());
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");

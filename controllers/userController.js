@@ -13,7 +13,7 @@ exports.index = function(req, res) {
         return next(err);
       }
       res.render("index", {
-        title: "Clubhouse Home",
+        title: "Welcome to the Clubhouse",
         current_user: req.user,
         messages: messages
       });

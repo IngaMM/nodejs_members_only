@@ -1,16 +1,17 @@
 extends layout
 
 block content
-
-  h1 #{message.title}
-  
-  p #[strong User:] 
-    a(href=message.user.url) #{message.user.name}
-  p #[strong Created at:] #{message.timestamp}
-  
-  div(style='margin-left:20px;margin-top:20px')
-
-    p #[strong Content]
-    p=message.content
+  div(class='list-page message-detail-page')
+    h1 #{message.title}
+    
+    p #[strong By:] 
+      a(href=message.user.url) #{message.user.name}
+    p #[strong Created at:] #{moment(message.timestamp).format("YYYY/MM/DD, HH:MM") }
+    hr
+    if !message.content
+      p This message has no content
+    else 
+      p #[strong Content]
+      p=message.content
     
     

@@ -1,18 +1,19 @@
 extends layout
 
 block content
-  h1 #{title}
+  div(class='list-page')
+    h1 #{title}
 
-  form(method='POST' action='')
-    div.form-group
-      label(for='name') Title:
-      input#title.form-control(type='text', name='title' value=(undefined===message ? '' : message.title))
-    div.form-group
-      label(for='content') Message:
-      textarea#content.form-control(type='textarea', placeholder='Type your message here' name='content' rows='3') #{undefined===message ? '' : message.content}
-    button.btn.btn-primary(type='submit') Submit
+    form(method='POST' action='')
+      div.form-group
+        label(for='name') Title:
+        input#title.form-control(type='text', name='title' value=(undefined===message ? '' : message.title))
+      div.form-group
+        label(for='content') Message:
+        textarea#content.form-control(type='textarea', placeholder='Type your message here' name='content' rows='3') #{undefined===message ? '' : message.content}
+      button.btn.btn-primary(type='submit') Submit
 
-  if errors 
-   ul
-    for error in errors
-     li!= error.msg
+    if errors 
+     ul(class="error-list")
+      for error in errors
+       li!= error.msg

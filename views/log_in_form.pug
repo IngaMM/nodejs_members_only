@@ -1,31 +1,26 @@
 extends layout
 
 block content
-  h1= title
-  
-  form(method='POST' action='')
-    div.form-group
-      label(for='username') Username (Email):
-      input#username.form-control(type='text', name='username' value=(undefined===user ? '' : user.username))
-    div.form-group
-      label(for='password') Password:
-      input#password.form-control(type='password', name='password')  
-    button.btn.btn-primary(type='submit') Submit
-    br
-    br
-    p No account yet? 
-      a(href='/clubhouse/user/sign-up') Sign up      
+  div(class='list-page')
+    h1= title
+    
+    form(method='POST' action='')
+      div.form-group
+        label(for='username') Username (Email):
+        input#username.form-control(type='text', name='username' value=(undefined===user ? '' : user.username))
+      div.form-group
+        label(for='password') Password:
+        input#password.form-control(type='password', name='password')  
+      button.btn.btn-primary(type='submit') Submit
+      br
+      br
+      p.account No account yet? 
+        a(href='/clubhouse/user/sign-up') Sign up      
 
-  if errors 
-   ul
-    for error in errors
-     li!= error.msg
-     
-     
-  if messages.length > 0
-   p=messages[messages.length-1]
-  
-
-  
-  
-  
+    if errors 
+     ul(class="error-list")
+      for error in errors
+       li!= error.msg
+       
+       
+    

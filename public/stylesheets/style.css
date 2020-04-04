@@ -1,10 +1,162 @@
-.sidebar-nav {
-  margin-top: 20px;
+body,
+html {
+  font-family: Tahoma, Geneva, sans-serif;
+  color: white;
+  margin: 0;
   padding: 0;
+}
+
+.container-fluid {
+  height: 100vh;
+}
+
+.row {
+  height: 100%;
+}
+
+h1,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  padding-bottom: 0.8em;
+  font-size: 2.6em;
+  font-weight: bold;
+}
+
+h3 {
+  padding-bottom: 0.4em;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+dt,
+dd {
+  font-size: 1.2em;
+}
+
+a,
+a:hover,
+a:active,
+a:visited,
+a:focus {
+  color: white;
+}
+
+.error-list {
+  color: red;
+  font-size: 1.3em;
   list-style: none;
+  padding-left: 0;
+  padding-bottom: 0.5em;
+}
+
+.navbar-box {
+  background-color: #282828;
+  font-size: 1.3em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.sidebar-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.right {
+  justify-self: end;
+}
+
+.background-box {
+  background: url("../background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  min-height: 100%;
+}
+
+.list-page {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  background-color: #282828;
+  border-radius: 1em;
+  padding: 1em 2em;
+  padding-bottom: 0;
+}
+
+.form-group,
+.btn,
+.account,
+.delete-page p {
+  font-size: 1.3em;
+}
+
+form {
+  padding-bottom: 1em;
 }
 
 #admin,
 #member {
-  margin-left: 10px;
+  position: relative;
+  left: 0.5em;
+  bottom: 0.1em;
+}
+
+.create-new-message {
+  font-size: 1.3em;
+  padding-bottom: 0.8em;
+}
+
+.message-indent {
+  padding-left: 0.5em;
+}
+
+.message-origin {
+  padding-top: 0.5em;
+}
+
+.detail-page,
+.message-detail-page {
+  padding-bottom: 0.5em;
+}
+
+.detail-page h1,
+.detail-page h3,
+.detail-page p,
+.detail-page a,
+.club-page h1 .message-detail-page a,
+.message-detail-page p {
+  font-size: 1.3em;
+}
+
+@media (min-width: 768px) {
+  .row {
+    display: table;
+    width: calc(100% + 2em);
+  }
+
+  [class*="col-"] {
+    float: none;
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  .sidebar-nav {
+    display: block;
+  }
+
+  .detail-page h1,
+  .club-page h1 {
+    font-size: 2.6em;
+  }
+
+  .detail-page h3 {
+    font-size: 1.8em;
+  }
 }
