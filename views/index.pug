@@ -16,7 +16,7 @@ block content
         if current_user && current_user.member === true 
           dd(class="message-indent message-origin") #[strong By:] #{message.user.name}
           dd(class="message-indent") #[strong Created at:] #{moment(message.timestamp).format("YYYY/MM/DD, HH:MM") }
-        if current_user && current_user.admin === true
+        if current_user && current_user.admin === true && current_user.member === true
           dd(class="message-indent")  
             a(href=message.url+'/delete') Delete message
         hr
